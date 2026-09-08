@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Kysira Docs — TypeUI · Astra (dark-first violet)
+   https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#custom-colors
+   Loaded after Material's stylesheet, so these scheme-scoped overrides win.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Violet brand + accent for both schemes (brand #713DFF, bloom #8B5CFF) */
+:root,
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #713DFF;
+  --md-primary-fg-color--light: #8B5CFF;
+  --md-primary-fg-color--dark:  #5B2FD6;
+  --md-accent-fg-color:         #8B5CFF;
+}
+
+/* ── Dark mode = the real Astra surface: near-black page, violet-black panels ── */
+[data-md-color-scheme="slate"] {
+  /* Page surface + lavender-white text ramp */
+  --md-default-bg-color:            #000000;
+  --md-default-fg-color:            rgba(245, 243, 255, 0.92);
+  --md-default-fg-color--light:     rgba(245, 243, 255, 0.66);
+  --md-default-fg-color--lighter:   rgba(245, 243, 255, 0.36);
+  --md-default-fg-color--lightest:  rgba(245, 243, 255, 0.14);
+  /* Raised violet-black code / inline surfaces */
+  --md-code-bg-color:               #0A0118;
+  --md-code-fg-color:               #E9E3FF;
+  /* Links in content = lighter violet */
+  --md-typeset-a-color:             #9B7BFF;
+  /* Footer sits a touch below the page */
+  --md-footer-bg-color:             #05010D;
+  --md-footer-bg-color--dark:       #000000;
+}
+
+/* Astra chrome in dark mode: near-black header/tabs with violet accents,
+   instead of a full bright-violet bar. Keeps the "deep and luminous" feel. */
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #05010D;
+  border-bottom: 1px solid #281C40;
+  color: #F5F3FF;
+}
+
+/* Raised panels: admonitions, code blocks, details, and tables sit on the
+   #0A0118 panel with a subtle #281C40 border — Astra's separation rule. */
+[data-md-color-scheme="slate"] .md-typeset .highlight,
+[data-md-color-scheme="slate"] .md-typeset details,
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  background-color: #0A0118;
+  border: 1px solid #281C40;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  background-color: #0A0118;
+  border: 1px solid #281C40;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #12081F;
+}
+
+/* Rounder, Astra-leaning corners on raised surfaces (both schemes) */
+.md-typeset .highlight,
+.md-typeset pre,
+.md-typeset details,
+.md-typeset .admonition,
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+}
+
+/* Violet selection to match the brand */
+::selection { background: rgba(113, 61, 255, 0.35); }
